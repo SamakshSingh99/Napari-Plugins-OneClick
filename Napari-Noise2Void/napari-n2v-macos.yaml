@@ -1,0 +1,42 @@
+name: napari-n2v
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.9.23
+  - pip
+  - pip:
+      # Numerical and GUI stack verified in the existing environment.
+      - numpy==1.26.4
+      - scipy==1.13.1
+      - scikit-image==0.24.0
+      - imagecodecs==2024.12.30
+      - tifffile==2024.6.18
+      - zarr==2.18.2
+      - napari==0.5.6
+      - PyQt5==5.15.11
+
+      # Apple Silicon TensorFlow stack used by napari-N2V.
+      - tensorflow-macos==2.15.0
+      - tensorflow-metal==1.1.0
+      - keras==2.15.0
+      - tensorflow-estimator==2.15.0
+      - ml-dtypes==0.2.0
+      - protobuf==4.25.9
+
+      # 1.59.3 provides a Python 3.9 universal macOS wheel. The inspected
+      # grpcio 1.80.0 installation failed pip's platform compatibility check.
+      - grpcio==1.59.3
+
+      # Noise2Void and napari plugin.
+      - bioimageio.core==0.10.4
+      - csbdeep==0.7.4
+      - n2v==0.3.3
+      - napari-time-slicer==0.5.0
+      - napari-tools-menu==0.1.20
+      - napari-workflows==0.2.11
+      - napari-n2v==0.1.1
+
+variables:
+  TF_CPP_MIN_LOG_LEVEL: "1"
