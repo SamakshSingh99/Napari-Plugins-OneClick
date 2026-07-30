@@ -1,0 +1,27 @@
+name: napari_nellie
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.10.19
+  - pip
+  - pip:
+      # Versions verified in the existing Apple Silicon environment.
+      - numpy==2.2.6
+      - scipy==1.15.3
+      - pandas==2.3.3
+      - matplotlib==3.10.8
+      - scikit-image==0.25.2
+      - imagecodecs==2025.3.30
+      - tifffile==2025.5.10
+      - zarr==2.18.3
+      - numba==0.63.1
+      - nd2==0.11.2
+      - ome-types==0.6.3
+      - triangle==20250106
+
+      # GUI and Nellie napari plugin.
+      - napari==0.6.6
+      - PyQt5==5.15.11
+      - nellie==1.0.4
