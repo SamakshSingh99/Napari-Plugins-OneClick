@@ -4,7 +4,7 @@ set -euo pipefail
 
 SCRIPT_DIR="${0:A:h}"
 ENV_FILE="$SCRIPT_DIR/napari-sam-macos.yaml"
-ENV_NAME="napari-sam-compatible"
+ENV_NAME="napari-sam"
 DESKTOP_APP="$HOME/Desktop/Napari SAM.app"
 
 pause_on_error() {

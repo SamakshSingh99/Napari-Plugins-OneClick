@@ -1,4 +1,4 @@
-name: napari-sam-compatible
+name: napari-sam
 
 channels:
   - conda-forge
