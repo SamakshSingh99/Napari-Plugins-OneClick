@@ -1,0 +1,29 @@
+name: napari-sam3-mac
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - pip
+  - git
+  - pip:
+      # SAM3 0.1.0 requires NumPy 1.26.0 exactly. SciPy 1.15.3 is
+      # compatible with that version, unlike newer SciPy releases.
+      - numpy==1.26.0
+      - scipy==1.15.3
+
+      # Versions verified in the existing Apple Silicon environment.
+      - torch==2.13.0
+      - torchvision==0.28.0
+      - napari==0.8.0
+      - PyQt6==6.10.2
+      - napari-sam3-assistant==4.4.0
+
+      # Install the complete device-agnostic SAM3 source. Do not replace
+      # this with "sam3==0.1.0" from PyPI; that wheel can lack sam3.sam.
+      - "sam3 @ git+https://github.com/jveitchmichaelis/sam3.git@device-agnostic"
+
+variables:
+  # Allows unsupported PyTorch operations to fall back to the CPU on a Mac.
+  PYTORCH_ENABLE_MPS_FALLBACK: "1"
