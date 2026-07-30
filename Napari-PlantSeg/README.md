@@ -66,31 +66,10 @@ plantseg --version
 
 The reproduced environment should report PlantSeg `2.0.0b7`.
 
-## Reproduced source revision
-
-The inspected environment uses an editable checkout located at:
-
-```text
-/Users/samaksh/Repositories/plant-seg
-```
-
-That checkout was clean and pointed to:
-
-```text
-Repository: https://github.com/kreshuklab/plant-seg
-Branch: master
-Commit: e9bdc787becc27ef5c64f1558b0e803db8c0cfb5
-Version: 2.0.0b7
-```
-
-For portability, the supplied YAML installs that exact Git commit directly.
-It does not require the original `/Users/samaksh/Repositories/plant-seg`
-folder and will not change files in that checkout.
-
 ## Main pinned versions
 
 - Python 3.13.5
-- PlantSeg 2.0.0b7 at commit `e9bdc78`
+- PlantSeg 2.0.0b7
 - napari 0.6.1
 - PyTorch 2.7.1
 - NumPy 2.2.6
