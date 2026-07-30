@@ -1,0 +1,28 @@
+name: napari-sam-compatible
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.10
+  - pip
+  - git
+  - pip:
+      # Core numerical stack verified with napari 0.4.19.
+      - numpy==1.26.4
+      - scipy==1.15.3
+
+      # PyTorch stack in the working Apple Silicon environment.
+      - torch==2.13.0
+      - torchvision==0.28.0
+
+      # napari-sam 0.4.13 uses napari's older layers_change event API.
+      - napari==0.4.19
+      - PyQt5==5.15.11
+      - napari-sam==0.4.13
+
+      # Pin Meta's original Segment Anything source to the verified commit.
+      - "segment_anything @ git+https://github.com/facebookresearch/segment-anything.git@dca509fe793f601edb92606367a655c15ac00fdf"
+
+variables:
+  PYTORCH_ENABLE_MPS_FALLBACK: "1"
