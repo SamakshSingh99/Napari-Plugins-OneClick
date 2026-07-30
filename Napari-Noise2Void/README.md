@@ -98,9 +98,15 @@ The inspected environment contained `grpcio 1.80.0`, which caused:
 grpcio 1.80.0 is not supported on this platform
 ```
 
-The supplied YAML pins `grpcio 1.59.3`, which provides a Python 3.9 universal
-macOS wheel compatible with ARM64 and TensorFlow 2.15. This correction is
-applied automatically during installation.
+The supplied YAML installs the exact `grpcio 1.59.3` Python 3.9 universal2
+macOS wheel. Its compiled extension contains both ARM64 and Intel code and is
+compatible with TensorFlow 2.15.
+
+This upstream wheel has an internal metadata error: its `WHEEL` file says
+`x86_64` even though the actual binary is universal2. Consequently,
+`pip check` prints a false platform warning. The installer ignores only that
+exact warning, continues to fail on any other dependency error, and directly
+tests the grpcio ARM64 and TensorFlow imports before creating the launcher.
 
 ## Troubleshooting
 
@@ -130,6 +136,18 @@ TF_CPP_MIN_LOG_LEVEL=1 \
   --name napari-n2v \
   napari
 ```
+
+### Missing `six` METADATA file
+
+An older or interrupted installation may report:
+
+```text
+No such file or directory: six-1.17.0.dist-info/METADATA
+```
+
+Run the updated one-click installer again. It detects this specific damaged
+package record, reinstalls `six 1.17.0`, and then continues the environment
+update automatically.
 
 ### TensorFlow reports no GPU
 

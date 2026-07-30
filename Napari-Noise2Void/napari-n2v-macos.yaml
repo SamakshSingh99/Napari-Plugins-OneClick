@@ -25,9 +25,9 @@ dependencies:
       - ml-dtypes==0.2.0
       - protobuf==4.25.9
 
-      # 1.59.3 provides a Python 3.9 universal macOS wheel. The inspected
-      # grpcio 1.80.0 installation failed pip's platform compatibility check.
-      - grpcio==1.59.3
+      # Install the exact Python 3.9 universal2 wheel. A version-only pin
+      # allowed pip to select the Intel x86_64 wheel on an ARM64 Mac.
+      - "grpcio @ https://files.pythonhosted.org/packages/9a/6b/f6761b4b6dcf0c53748415d17183c3b5277a71d251c86fb401941ab3c468/grpcio-1.59.3-cp39-cp39-macosx_10_10_universal2.whl#sha256=36636babfda14f9e9687f28d5b66d349cf88c1301154dc71c6513de2b6c88c59"
 
       # Noise2Void and napari plugin.
       - bioimageio.core==0.10.4
