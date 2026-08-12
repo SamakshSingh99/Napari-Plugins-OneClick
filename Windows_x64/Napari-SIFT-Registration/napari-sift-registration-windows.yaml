@@ -1,0 +1,14 @@
+name: napari-sift-registration
+channels: [conda-forge]
+dependencies:
+  - python=3.10.19
+  - pip
+  - pip:
+      - numpy==2.2.6
+      - scipy==1.15.3
+      - scikit-image==0.25.2
+      - napari==0.6.6
+      - magicgui==0.10.1
+      - QtPy==2.4.3
+      - PyQt5==5.15.11
+      - napari-sift-registration==0.1.2

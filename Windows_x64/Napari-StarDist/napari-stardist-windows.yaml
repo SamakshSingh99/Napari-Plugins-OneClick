@@ -1,0 +1,19 @@
+name: napari-stardist
+channels: [conda-forge]
+dependencies:
+  - python=3.10.19
+  - pip
+  - pip:
+      - numpy==1.26.4
+      - scipy==1.15.3
+      - scikit-image==0.25.2
+      - matplotlib==3.10.3
+      - pandas==2.3.0
+      - tensorflow==2.15.0
+      - csbdeep==0.8.2
+      - stardist==0.9.2
+      - napari==0.5.6
+      - magicgui==0.10.1
+      - QtPy==2.4.3
+      - PyQt5==5.15.11
+      - stardist-napari==2024.8.6.1

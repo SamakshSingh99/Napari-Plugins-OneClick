@@ -1,0 +1,13 @@
+name: empanada
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - numpy==2.4.6
+      - scipy==1.17.1
+      - torch==2.13.0
+      - torchvision==0.28.0
+      - napari==0.6.6
+      - PyQt5==5.15.11
+      - empanada-napari==1.2.4

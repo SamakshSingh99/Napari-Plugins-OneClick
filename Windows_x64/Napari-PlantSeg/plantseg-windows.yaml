@@ -1,0 +1,26 @@
+name: plant-seg-dev
+channels: [conda-forge]
+dependencies:
+  - python=3.13.5
+  - pip
+  - git
+  - pytorch=2.7.1
+  - numpy=2.2.6
+  - scipy=1.16.0
+  - napari=0.6.1
+  - pyqt=5.15.11
+  - qtpy=2.4.3
+  - pydantic=2.9.2
+  - bioimageio.core=0.8.0
+  - h5py=3.14.0
+  - tifffile=2025.6.11
+  - zarr=3.0.8
+  - vigra=1.12.2
+  - python-elf=0.7.2
+  - python-graphviz=0.21
+  - scikit-image=0.25.2
+  - qt-material=2.14
+  - requests=2.32.4
+  - pyyaml=6.0.2
+  - pip:
+      - "plantseg @ git+https://github.com/kreshuklab/plant-seg.git@e9bdc787becc27ef5c64f1558b0e803db8c0cfb5"
