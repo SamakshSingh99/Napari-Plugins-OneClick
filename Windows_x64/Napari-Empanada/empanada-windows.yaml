@@ -1,18 +1,18 @@
 name: empanada
 channels: [conda-forge]
 dependencies:
-  - python=3.11
+  # Empanada's published Windows guidance supports Python 3.9 and below.
+  - python=3.9.23
   - pip
   - pip:
-      - numpy==2.4.6
-      - scipy==1.17.1
-      # Newer StringZilla releases may lack a CPython 3.11 Windows x64
-      # wheel and make pip attempt a Visual C++ source build. Version
-      # 3.12.4 satisfies Albucore's >=3.10.4 requirement and has a
-      # cp311-win_amd64 wheel on PyPI.
-      - stringzilla==3.12.4
-      - torch==2.13.0
-      - torchvision==0.28.0
-      - napari==0.6.6
+      - numpy==1.26.4
+      - scipy==1.13.1
+      # This matched pair predates the StringZilla dependency and therefore
+      # avoids compiling a native extension with Visual C++ Build Tools.
+      - albumentations==1.4.18
+      - albucore==0.0.17
+      - torch==2.10.0
+      - torchvision==0.25.0
+      - napari==0.5.6
       - PyQt5==5.15.11
       - empanada-napari==1.2.4

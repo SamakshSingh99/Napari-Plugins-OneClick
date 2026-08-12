@@ -58,7 +58,7 @@ if errorlevel 1 goto :failed
 "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import importlib.metadata as m, napari; print('napari:', m.version('napari')); print('Plugin environment import: OK')"
 if errorlevel 1 goto :failed
 if /I "%FOLDER_NAME%"=="Napari-Cellpose" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import cellpose, cellpose_napari; print('Cellpose plugin: OK')"
-if /I "%FOLDER_NAME%"=="Napari-Empanada" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import empanada_napari; print('Empanada plugin: OK')"
+if /I "%FOLDER_NAME%"=="Napari-Empanada" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import sys, importlib.metadata as m, albumentations, empanada_napari; assert sys.version_info[:2]==(3,9); assert m.version('albumentations')=='1.4.18'; print('Python:',sys.version.split()[0]); print('Albumentations:',m.version('albumentations')); print('Empanada plugin: OK')"
 if /I "%FOLDER_NAME%"=="Napari-Nellie" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import nellie; print('Nellie plugin: OK')"
 if /I "%FOLDER_NAME%"=="Napari-Noise2Void" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import n2v, napari_n2v; print('Noise2Void plugin: OK')"
 if /I "%FOLDER_NAME%"=="Napari-PlantSeg" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import plantseg; print('PlantSeg: OK')"

@@ -41,8 +41,9 @@ needs a clean installation test on Windows x64 before being labelled verified.
 
 ## StringZilla compiler error
 
-This environment pins `stringzilla==3.12.4`. That release provides a binary
-wheel for CPython 3.11 on Windows x64 and prevents pip from trying to compile a
-newer release with Microsoft Visual C++ Build Tools. If an earlier installation
-failed while building StringZilla, rerun this updated installer. Conda will
-update the partially created environment using the corrected YAML.
+This environment uses Python 3.9, as recommended by Empanada's published
+Windows guidance, and pins `albumentations==1.4.18` with
+`albucore==0.0.17`. This matched pair predates the StringZilla dependency, so
+Microsoft Visual C++ Build Tools are not required. If an earlier installation
+failed while building StringZilla, remove the partial `empanada` environment
+and rerun this updated installer.
