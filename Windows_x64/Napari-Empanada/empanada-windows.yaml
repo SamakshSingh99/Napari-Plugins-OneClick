@@ -6,6 +6,11 @@ dependencies:
   - pip:
       - numpy==2.4.6
       - scipy==1.17.1
+      # Newer StringZilla releases may lack a CPython 3.11 Windows x64
+      # wheel and make pip attempt a Visual C++ source build. Version
+      # 3.12.4 satisfies Albucore's >=3.10.4 requirement and has a
+      # cp311-win_amd64 wheel on PyPI.
+      - stringzilla==3.12.4
       - torch==2.13.0
       - torchvision==0.28.0
       - napari==0.6.6
