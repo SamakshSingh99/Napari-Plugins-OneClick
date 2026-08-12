@@ -35,6 +35,31 @@ if not defined ENV_NAME (
   goto :failed
 )
 
+echo Installer file: %~f0
+echo Environment file: %ENV_FILE%
+echo Environment name: %ENV_NAME%
+findstr /x /c:"  - python=3.9.23" "%ENV_FILE%" >nul
+if errorlevel 1 (
+  echo.
+  echo ERROR: This installer is paired with an old Empanada YAML.
+  echo The YAML must contain:   - python=3.9.23
+  echo Download the latest Windows package and keep its two files together.
+  goto :failed
+)
+findstr /x /c:"      - albumentations==1.4.18" "%ENV_FILE%" >nul
+if errorlevel 1 (
+  echo.
+  echo ERROR: The required compiler-free Albumentations pin is missing.
+  echo Expected:       - albumentations==1.4.18
+  goto :failed
+)
+if /I not "%ENV_NAME%"=="empanada-win39" (
+  echo.
+  echo ERROR: Expected environment name empanada-win39, but found %ENV_NAME%.
+  echo This is an old YAML or installer folder.
+  goto :failed
+)
+
 for %%I in ("%~dp0.") do set "FOLDER_NAME=%%~nxI"
 set "APP_NAME=%FOLDER_NAME:Napari-=%"
 set "LAUNCH_COMMAND=napari"

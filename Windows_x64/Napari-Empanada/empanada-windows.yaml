@@ -1,4 +1,4 @@
-name: empanada
+name: empanada-win39
 channels: [conda-forge]
 dependencies:
   # Empanada's published Windows guidance supports Python 3.9 and below.

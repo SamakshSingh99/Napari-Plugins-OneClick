@@ -3,6 +3,10 @@
 This folder creates a dedicated 64-bit Windows Conda environment and a Desktop
 shortcut for this napari plugin.
 
+This corrected release uses the environment name `empanada-win39`. The new
+name prevents a failed Python 3.11 environment called `empanada` from being
+reused accidentally.
+
 ## Requirements
 
 - Windows 10 or 11 x64
@@ -45,5 +49,6 @@ This environment uses Python 3.9, as recommended by Empanada's published
 Windows guidance, and pins `albumentations==1.4.18` with
 `albucore==0.0.17`. This matched pair predates the StringZilla dependency, so
 Microsoft Visual C++ Build Tools are not required. If an earlier installation
-failed while building StringZilla, remove the partial `empanada` environment
-and rerun this updated installer.
+failed while building StringZilla, leave or remove the old `empanada`
+environment and run this updated installer. It creates the separate
+`empanada-win39` environment.

@@ -26,7 +26,7 @@ computer's GPU driver. See each plugin README for limitations.
 | Folder | Environment | Desktop shortcut |
 | --- | --- | --- |
 | `Napari-Cellpose` | `napari-cellpose` | Napari Cellpose |
-| `Napari-Empanada` | `empanada` | Napari Empanada |
+| `Napari-Empanada` | `empanada-win39` | Napari Empanada |
 | `Napari-Nellie` | `napari_nellie` | Napari Nellie |
 | `Napari-Noise2Void` | `napari-n2v` | Napari Noise2Void |
 | `Napari-PlantSeg` | `plant-seg-dev` | Napari PlantSeg |

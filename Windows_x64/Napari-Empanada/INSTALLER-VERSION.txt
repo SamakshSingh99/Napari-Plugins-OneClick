@@ -1,0 +1,8 @@
+Empanada Windows installer revision: 4
+Environment: empanada-win39
+Python: 3.9.23
+Albumentations: 1.4.18
+StringZilla: not installed
+
+If installation output mentions cpython-311 or building StringZilla, a previous
+installer folder is being used instead of this revision.
