@@ -123,18 +123,18 @@ This approach is especially useful for:
 
 | Plugin / tool | What it helps with | Apple Silicon macOS | Windows x64 |
 | --- | --- | :---: | :---: |
-| [Cellpose](Cellpose/README.md) | Generalist cell and nucleus segmentation | [🧪](MacOS_arm64/Napari-Cellpose/) | [🧪](Windows_x64/Napari-Cellpose/README.md) |
-| [Empanada](Empanada/README.md) | Deep-learning segmentation, including MitoNet | [🧪](MacOS_arm64/Napari-Empanada/)  | [🧪](Windows_x64/Napari-Empanada/README.md) |
-| [PlantSeg](PlantSeg/README.md) | Plant-cell and tissue segmentation | [🧪](MacOS_arm64/Napari-PlantSeg/)  | [🧪](Windows_x64/Napari-PlantSeg/README.md) |
-| [Noise2Void](N2V/README.md) | Self-supervised image denoising | [🧪](MacOS_arm64/Napari-Noise2Void/)  | [🧪](Windows_x64/Napari-Noise2Void/README.md) |
-| [Nellie](Nellie/README.md) | Organelle segmentation and dynamics | [🧪](MacOS_arm64/Napari-Nellie/)  | [🧪](Windows_x64/Napari-Nellie/README.md) |
-| [Original SAM](SAM/README.md) | Promptable segmentation with Segment Anything | [🧪](MacOS_arm64/Napari-SAM/)  | [🧪](Windows_x64/Napari-SAM/README.md) |
-| [SAM3 Assistant](SAM3/README.md) | SAM3-assisted segmentation | [🧪](MacOS_arm64/Napari-SAM3-Assistant/)  | [🧪](Windows_x64/Napari-SAM3-Assistant/README.md) |
-| [SIFT Registration](SIFT-Registration/README.md) | Feature-based 2D image registration | [🧪](MacOS_arm64/Napari-SIFT-Registration/)  | [🧪](Windows_x64/Napari-SIFT-Registration/README.md) |
-| [StarDist](StarDist/README.md) | 2D/3D star-convex object segmentation | [🧪](MacOS_arm64/Napari-StarDist/)  | [🧪](Windows_x64/Napari-StarDist/README.md) |
-| [FLIM Phasor Plotter](FLIM-Phasor-Plotter/README.md) | FLIM loading, phasor analysis and population selection | [🧪](MacOS_arm64/Napari-FLIM-Phasor-Plotter/)  | [🧪](Windows_x64/Napari-FLIM-Phasor-Plotter/README.md) |
-| [BrainGlobe v3](BrainGlobe-v3/README.md) | Neuroanatomy, registration, detection and atlas tools | [🧪](MacOS_arm64/Napari-BrainGlobe-v3/) | [🧪](Windows_x64/Napari-BrainGlobe-v3/README.md) |
-| [Imaris Loader](Imaris-Loader/README.md) | Lazy, multiscale loading of `.ims` files | [🧪](MacOS_arm64/Napari-Imaris-Loader/)  | — |
+| **Cellpose** | Generalist cell and nucleus segmentation | [🧪](MacOS_arm64/Napari-Cellpose/) | [🧪](Windows_x64/Napari-Cellpose/README.md) |
+| **Empanada** | Deep-learning segmentation, including MitoNet | [🧪](MacOS_arm64/Napari-Empanada/)  | [🧪](Windows_x64/Napari-Empanada/README.md) |
+| **PlantSeg** | Plant-cell and tissue segmentation | [🧪](MacOS_arm64/Napari-PlantSeg/)  | [🧪](Windows_x64/Napari-PlantSeg/README.md) |
+| **Noise2Void** | Self-supervised image denoising | [🧪](MacOS_arm64/Napari-Noise2Void/)  | [🧪](Windows_x64/Napari-Noise2Void/README.md) |
+| **Nellie** | Organelle segmentation and dynamics | [🧪](MacOS_arm64/Napari-Nellie/)  | [🧪](Windows_x64/Napari-Nellie/README.md) |
+| **Original SAM**| Promptable segmentation with Segment Anything | [🧪](MacOS_arm64/Napari-SAM/)  | [🧪](Windows_x64/Napari-SAM/README.md) |
+| **SAM3 Assistant** | SAM3-assisted segmentation | [🧪](MacOS_arm64/Napari-SAM3-Assistant/)  | [🧪](Windows_x64/Napari-SAM3-Assistant/README.md) |
+| **SIFT Registration** | Feature-based 2D image registration | [🧪](MacOS_arm64/Napari-SIFT-Registration/)  | [🧪](Windows_x64/Napari-SIFT-Registration/README.md) |
+| **StarDist** | 2D/3D star-convex object segmentation | [🧪](MacOS_arm64/Napari-StarDist/)  | [🧪](Windows_x64/Napari-StarDist/README.md) |
+| **FLIM Phasor Plotter** | FLIM loading, phasor analysis and population selection | [🧪](MacOS_arm64/Napari-FLIM-Phasor-Plotter/)  | [🧪](Windows_x64/Napari-FLIM-Phasor-Plotter/README.md) |
+| **BrainGlobe v3** | Neuroanatomy, registration, detection and atlas tools | [🧪](MacOS_arm64/Napari-BrainGlobe-v3/) | [🧪](Windows_x64/Napari-BrainGlobe-v3/README.md) |
+| **Imaris Loader** | Lazy, multiscale loading of `.ims` files | [🧪](MacOS_arm64/Napari-Imaris-Loader/)  | — |
 
 Each linked page documents that setup's requirements, installed environment,
 launcher and known limitations. Inclusion in this table means an installer is
