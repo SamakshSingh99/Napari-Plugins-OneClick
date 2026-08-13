@@ -134,7 +134,7 @@ This approach is especially useful for:
 | [StarDist](StarDist/README.md) | 2D/3D star-convex object segmentation | [🧪](MacOS_arm64/Napari-StarDist/)  | [🧪](Windows_x64/Napari-StarDist/README.md) |
 | [FLIM Phasor Plotter](FLIM-Phasor-Plotter/README.md) | FLIM loading, phasor analysis and population selection | [🧪](MacOS_arm64/Napari-FLIM-Phasor-Plotter/)  | [🧪](Windows_x64/Napari-FLIM-Phasor-Plotter/README.md) |
 | [BrainGlobe v3](BrainGlobe-v3/README.md) | Neuroanatomy, registration, detection and atlas tools | [🧪](MacOS_arm64/Napari-BrainGlobe-v3/) | [🧪](Windows_x64/Napari-BrainGlobe-v3/README.md) |
-| [Imaris Loader](Imaris-Loader/README.md) | Lazy, multiscale loading of `.ims` files | 🧪 | — |
+| [Imaris Loader](Imaris-Loader/README.md) | Lazy, multiscale loading of `.ims` files | [🧪](MacOS_arm64/Napari-Imaris-Loader/)  | — |
 
 Each linked page documents that setup's requirements, installed environment,
 launcher and known limitations. Inclusion in this table means an installer is
