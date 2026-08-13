@@ -27,7 +27,7 @@
 > still needs to be solved.
 
 At this stage, the repository is best viewed as a growing collection of
-reproducible installation experiments—not a finished software distribution.
+reproducible installation experiments.
 Early testers are welcome, but please use the installers with that expectation
 and [report what happens](https://github.com/SamakshSingh99/Napari-Plugins-OneClick/issues).
 
