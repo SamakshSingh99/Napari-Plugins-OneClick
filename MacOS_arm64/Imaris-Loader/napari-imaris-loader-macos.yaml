@@ -1,0 +1,23 @@
+name: napari-imaris-loader
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.10.19
+  - pip
+  - pip:
+      # Conservative stack for this legacy (2022) npe1 plugin.
+      - numpy==1.26.4
+      - scipy==1.14.1
+      - h5py==3.12.1
+      - dask[array]==2024.12.1
+      - zarr==2.18.7
+      - scikit-image==0.24.0
+      - napari==0.4.19
+      - napari-plugin-engine==0.2.0
+      - magicgui==0.9.1
+      - QtPy==2.4.3
+      - PyQt5==5.15.11
+      - imaris-ims-file-reader==0.1.8
+      - napari-imaris-loader==0.1.8
