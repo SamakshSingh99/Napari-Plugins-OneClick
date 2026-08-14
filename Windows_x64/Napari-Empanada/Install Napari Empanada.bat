@@ -20,25 +20,14 @@ if not defined CONDA_EXE (
   goto :failed
 )
 
-set "ENV_FILE="
-for %%F in (*-windows.yaml) do if not defined ENV_FILE set "ENV_FILE=%%~fF"
-if not defined ENV_FILE (
-  echo No *-windows.yaml file was found beside this installer.
-  goto :failed
-)
-
-set "ENV_NAME="
-for /f "tokens=1,* delims=:" %%A in ('findstr /b /c:"name:" "%ENV_FILE%"') do set "ENV_NAME=%%B"
-for /f "tokens=*" %%A in ("%ENV_NAME%") do set "ENV_NAME=%%A"
-if not defined ENV_NAME (
-  echo Could not read the environment name from %ENV_FILE%.
-  goto :failed
-)
+set "ENV_FILE=%~dp0empanada-windows.yaml"
+set "ENV_NAME=empanada-win39"
+if not exist "%ENV_FILE%" goto :missing_yaml
 
 echo Installer file: %~f0
 echo Environment file: %ENV_FILE%
 echo Environment name: %ENV_NAME%
-findstr /x /c:"  - python=3.9.23" "%ENV_FILE%" >nul
+findstr /l /c:"python=3.9.23" "%ENV_FILE%" >nul
 if errorlevel 1 (
   echo.
   echo ERROR: This installer is paired with an old Empanada YAML.
@@ -46,7 +35,7 @@ if errorlevel 1 (
   echo Download the latest Windows package and keep its two files together.
   goto :failed
 )
-findstr /x /c:"      - albumentations==1.4.18" "%ENV_FILE%" >nul
+findstr /l /c:"albumentations==1.4.18" "%ENV_FILE%" >nul
 if errorlevel 1 (
   echo.
   echo ERROR: The required compiler-free Albumentations pin is missing.
@@ -121,3 +110,9 @@ echo Installation stopped because of an error.
 echo Copy the error shown above if you need help.
 pause
 exit /b 1
+
+:missing_yaml
+echo.
+echo The required YAML file is missing beside this installer.
+echo Expected: empanada-windows.yaml
+goto :failed

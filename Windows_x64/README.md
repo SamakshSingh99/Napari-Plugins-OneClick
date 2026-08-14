@@ -23,6 +23,19 @@ These installers are CPU-compatible by default. An NVIDIA CUDA setup is not
 silently installed because the correct PyTorch/TensorFlow build depends on the
 computer's GPU driver. See each plugin README for limitations.
 
+## CMD reports that the YAML was unexpected
+
+Use the current installer package and keep each `.bat` file beside the exact
+YAML supplied in its plugin folder. Current launchers use an explicit YAML and
+environment name and do not parse them through a nested CMD command. This also
+allows the downloaded repository folder to contain spaces or parentheses, such
+as `Napari-Plugins-OneClick-main (1)`.
+
+Do not rename only the YAML or combine files from different release archives.
+If an older download prints `napari-...-windows.yaml was unexpected at this
+time`, replace both the BAT and YAML with the matching files from the current
+package.
+
 | Folder | Environment | Desktop shortcut |
 | --- | --- | --- |
 | `Napari-Cellpose` | `napari-cellpose` | Napari Cellpose |
@@ -34,6 +47,9 @@ computer's GPU driver. See each plugin README for limitations.
 | `Napari-SAM3-Assistant` | `napari-sam3-windows` | Napari SAM3 Assistant |
 | `Napari-SIFT-Registration` | `napari-sift-registration` | Napari SIFT Registration |
 | `Napari-StarDist` | `napari-stardist` | Napari StarDist |
+| `Napari-FLIM-Phasor-Plotter` | `napari-flim-phasor` | Napari FLIM Phasor Plotter |
+| `Napari-BrainGlobe-v3` | `brainglobe-v3` | BrainGlobe v3 |
+| `Napari-PHILOW` | `napari-philow-win` | Napari PHILOW |
 
 ## Reproducibility
 

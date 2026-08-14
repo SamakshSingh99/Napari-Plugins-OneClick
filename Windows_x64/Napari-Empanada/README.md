@@ -7,6 +7,10 @@ This corrected release uses the environment name `empanada-win39`. The new
 name prevents a failed Python 3.11 environment called `empanada` from being
 reused accidentally.
 
+Installer revision 5 uses indentation-insensitive YAML safety checks so Windows
+line-ending or Git checkout transformations do not cause a false "old YAML"
+message.
+
 ## Requirements
 
 - Windows 10 or 11 x64

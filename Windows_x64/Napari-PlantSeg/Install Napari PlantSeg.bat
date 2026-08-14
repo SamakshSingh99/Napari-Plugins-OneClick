@@ -20,20 +20,9 @@ if not defined CONDA_EXE (
   goto :failed
 )
 
-set "ENV_FILE="
-for %%F in (*-windows.yaml) do if not defined ENV_FILE set "ENV_FILE=%%~fF"
-if not defined ENV_FILE (
-  echo No *-windows.yaml file was found beside this installer.
-  goto :failed
-)
-
-set "ENV_NAME="
-for /f "tokens=1,* delims=:" %%A in ('findstr /b /c:"name:" "%ENV_FILE%"') do set "ENV_NAME=%%B"
-for /f "tokens=*" %%A in ("%ENV_NAME%") do set "ENV_NAME=%%A"
-if not defined ENV_NAME (
-  echo Could not read the environment name from %ENV_FILE%.
-  goto :failed
-)
+set "ENV_FILE=%~dp0plantseg-windows.yaml"
+set "ENV_NAME=plant-seg-dev"
+if not exist "%ENV_FILE%" goto :missing_yaml
 
 for %%I in ("%~dp0.") do set "FOLDER_NAME=%%~nxI"
 set "APP_NAME=%FOLDER_NAME:Napari-=%"
@@ -96,3 +85,9 @@ echo Installation stopped because of an error.
 echo Copy the error shown above if you need help.
 pause
 exit /b 1
+
+:missing_yaml
+echo.
+echo The required YAML file is missing beside this installer.
+echo Expected: plantseg-windows.yaml
+goto :failed
