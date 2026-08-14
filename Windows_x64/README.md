@@ -39,7 +39,7 @@ package.
 | Folder | Environment | Desktop shortcut |
 | --- | --- | --- |
 | `Napari-Cellpose` | `napari-cellpose` | Napari Cellpose |
-| `Napari-Empanada` | `empanada-win39` | Napari Empanada |
+| `Napari-Empanada` | `empanada-win310` | Napari Empanada |
 | `Napari-Nellie` | `napari_nellie` | Napari Nellie |
 | `Napari-Noise2Void` | `napari-n2v` | Napari Noise2Void |
 | `Napari-PlantSeg` | `plant-seg-dev` | Napari PlantSeg |
@@ -56,3 +56,21 @@ package.
 The YAML files pin the main compatibility-sensitive packages. New upstream
 versions are not installed automatically. Rerunning an installer restores or
 updates its environment to the versions recorded in that YAML.
+
+## Dependency test status
+
+All 12 environments passed the Windows x64 Conda solve and Windows pip package
+resolution test on 14 August 2026. Each BAT/YAML pair also passed the static
+launcher checks, including environment-name matching, explicit YAML selection,
+CRLF line endings, and an installed-environment `pip check` step.
+
+See [DEPENDENCY-TEST-REPORT.md](DEPENDENCY-TEST-REPORT.md) for the results and
+test limitations. Maintainers can rerun the cross-platform preflight with:
+
+```text
+python Windows_x64/test_windows_dependencies.py
+```
+
+This requires Conda, `uv`, PyYAML, internet access, and current win-64 package
+metadata. It resolves the Windows packages without installing or launching the
+Windows GUI applications.

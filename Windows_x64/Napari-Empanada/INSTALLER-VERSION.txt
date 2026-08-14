@@ -1,11 +1,13 @@
-Empanada Windows installer revision: 5
-Environment: empanada-win39
-Python: 3.9.23
+Empanada Windows installer revision: 7
+Environment: empanada-win310
+Python: 3.10.19
 Albumentations: 1.4.18
+PyTorch: 2.2.2+cpu
+torchvision: 0.17.2+cpu
 StringZilla: not installed
 
 If installation output mentions cpython-311 or building StringZilla, a previous
 installer folder is being used instead of this revision.
 
-Revision 5 makes the pre-install YAML check insensitive to indentation and line
-ending differences introduced by ZIP extraction or Git clients on Windows.
+Revision 7 uses Python 3.10 as required by empanada-napari 1.2.4 and keeps the
+official CPU PyTorch wheel pair.

@@ -1,18 +1,21 @@
-name: empanada-win39
+name: empanada-win310
 channels: [conda-forge]
 dependencies:
-  # Empanada's published Windows guidance supports Python 3.9 and below.
-  - python=3.9.23
+  # empanada-napari 1.2.4 declares Python 3.10 or newer.
+  - python=3.10.19
   - pip
   - pip:
+      # Use PyTorch's official CPU wheel index explicitly. This avoids stale
+      # institutional/PyPI mirrors that expose only old Windows torch builds.
+      - --extra-index-url https://download.pytorch.org/whl/cpu
       - numpy==1.26.4
       - scipy==1.13.1
       # This matched pair predates the StringZilla dependency and therefore
       # avoids compiling a native extension with Visual C++ Build Tools.
       - albumentations==1.4.18
       - albucore==0.0.17
-      - torch==2.10.0
-      - torchvision==0.25.0
+      - torch==2.2.2+cpu
+      - torchvision==0.17.2+cpu
       - napari==0.5.6
       - PyQt5==5.15.11
       - empanada-napari==1.2.4

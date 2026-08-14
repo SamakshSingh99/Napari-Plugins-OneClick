@@ -21,17 +21,17 @@ if not defined CONDA_EXE (
 )
 
 set "ENV_FILE=%~dp0empanada-windows.yaml"
-set "ENV_NAME=empanada-win39"
+set "ENV_NAME=empanada-win310"
 if not exist "%ENV_FILE%" goto :missing_yaml
 
 echo Installer file: %~f0
 echo Environment file: %ENV_FILE%
 echo Environment name: %ENV_NAME%
-findstr /l /c:"python=3.9.23" "%ENV_FILE%" >nul
+findstr /l /c:"python=3.10.19" "%ENV_FILE%" >nul
 if errorlevel 1 (
   echo.
   echo ERROR: This installer is paired with an old Empanada YAML.
-  echo The YAML must contain:   - python=3.9.23
+  echo The YAML must contain:   - python=3.10.19
   echo Download the latest Windows package and keep its two files together.
   goto :failed
 )
@@ -42,9 +42,16 @@ if errorlevel 1 (
   echo Expected:       - albumentations==1.4.18
   goto :failed
 )
-if /I not "%ENV_NAME%"=="empanada-win39" (
+findstr /l /c:"torch==2.2.2+cpu" "%ENV_FILE%" >nul
+if errorlevel 1 (
   echo.
-  echo ERROR: Expected environment name empanada-win39, but found %ENV_NAME%.
+  echo ERROR: The required Python 3.10 Windows PyTorch pin is missing.
+  echo Expected:       - torch==2.2.2+cpu
+  goto :failed
+)
+if /I not "%ENV_NAME%"=="empanada-win310" (
+  echo.
+  echo ERROR: Expected environment name empanada-win310, but found %ENV_NAME%.
   echo This is an old YAML or installer folder.
   goto :failed
 )
@@ -72,7 +79,7 @@ if errorlevel 1 goto :failed
 "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import importlib.metadata as m, napari; print('napari:', m.version('napari')); print('Plugin environment import: OK')"
 if errorlevel 1 goto :failed
 if /I "%FOLDER_NAME%"=="Napari-Cellpose" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import cellpose, cellpose_napari; print('Cellpose plugin: OK')"
-if /I "%FOLDER_NAME%"=="Napari-Empanada" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import sys, importlib.metadata as m, albumentations, empanada_napari; assert sys.version_info[:2]==(3,9); assert m.version('albumentations')=='1.4.18'; print('Python:',sys.version.split()[0]); print('Albumentations:',m.version('albumentations')); print('Empanada plugin: OK')"
+if /I "%FOLDER_NAME%"=="Napari-Empanada" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import sys, importlib.metadata as m, albumentations, torch, torchvision, empanada_napari; assert sys.version_info[:2]==(3,10); assert m.version('albumentations')=='1.4.18'; assert torch.__version__.startswith('2.2.2'); assert torchvision.__version__.startswith('0.17.2'); print('Python:',sys.version.split()[0]); print('Albumentations:',m.version('albumentations')); print('PyTorch:',torch.__version__); print('torchvision:',torchvision.__version__); print('Empanada plugin: OK')"
 if /I "%FOLDER_NAME%"=="Napari-Nellie" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import nellie; print('Nellie plugin: OK')"
 if /I "%FOLDER_NAME%"=="Napari-Noise2Void" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import n2v, napari_n2v; print('Noise2Void plugin: OK')"
 if /I "%FOLDER_NAME%"=="Napari-PlantSeg" "%CONDA_EXE%" run -n "%ENV_NAME%" python -c "import plantseg; print('PlantSeg: OK')"
