@@ -1,0 +1,16 @@
+SAM3 Assistant Windows installer revision: 3
+Environment: napari-sam3-windows
+Python: 3.11
+SAM3 source commit: 477cd99b37f634f8aa06b83936b1de669f339d00
+napari-sam3-assistant: 4.4.0
+
+Revision 1 registers the complete pinned source checkout so the sam3.sam
+subpackage omitted by the generated SAM3 wheel remains importable.
+
+Revision 2 explicitly installs einops 0.8.1, which sam3/sam/rope.py imports
+but the pinned SAM3 commit omits from its base dependency metadata.
+
+Revision 3 explicitly installs pycocotools 2.0.10, which is imported during
+SAM3 initialization but is also missing from the commit's base dependencies.
+The installer downloads no model weights; users select their existing model
+checkpoint path from inside napari after installation.

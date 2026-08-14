@@ -1,0 +1,25 @@
+name: napari-philow-win
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.10.14
+  - pip
+  - pip:
+      # CPU-compatible Windows build. See the README before changing PyTorch
+      # to an NVIDIA CUDA build because it must match the installed driver.
+      - numpy==1.26.4
+      - scipy==1.13.1
+      - pandas==2.2.3
+      - scikit-image==0.22.0
+      - dask==2024.5.2
+      - dask-image==2024.5.3
+      - opencv-python==4.10.0.84
+      - matplotlib==3.8.4
+      - torch==2.2.2
+      - torchvision==0.17.2
+      - segmentation-models-pytorch==0.3.3
+      - napari==0.5.6
+      - PyQt5==5.15.11
+      - napari-PHILOW==0.2.0

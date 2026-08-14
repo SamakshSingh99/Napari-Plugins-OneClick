@@ -1,0 +1,24 @@
+name: napari-sam3-windows
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - pip
+  - git
+  - pip:
+      - numpy==1.26.0
+      - scipy==1.15.3
+      - torch==2.13.0
+      - torchvision==0.28.0
+      - napari==0.8.0
+      - PyQt6==6.10.2
+      - napari-sam3-assistant==4.4.0
+      # Required by sam3/sam/rope.py but omitted from this SAM3 commit's
+      # base dependency metadata.
+      - einops==0.8.1
+      # Imported while SAM3 initializes through sam3.train.data, but likewise
+      # omitted from the base dependency metadata.
+      - pycocotools==2.0.10
+      # This commit's wheel metadata lists only sam3 and sam3.model. The BAT
+      # installer additionally exposes the complete checkout so sam3.sam and
+      # the other source subpackages remain importable.
+      - "sam3 @ git+https://github.com/jveitchmichaelis/sam3.git@477cd99b37f634f8aa06b83936b1de669f339d00"

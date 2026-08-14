@@ -1,0 +1,10 @@
+PlantSeg Windows installer revision: 1
+Environment: plant-seg-dev
+Python: 3.12.11
+PyTorch: 2.7.1+cpu (official PyTorch Windows CPU wheel)
+PlantSeg source: e9bdc787becc27ef5c64f1558b0e803db8c0cfb5
+
+Revision 1 replaces the failing Conda PyTorch/Python 3.13 combination with the
+Python 3.12 baseline used by PlantSeg's pinned Windows constructor. It repairs
+broken existing environments and verifies the native torch._C runtime before
+launching PlantSeg.
