@@ -136,6 +136,7 @@ This approach is especially useful for:
 | **BrainGlobe v3** | Neuroanatomy, registration, detection and atlas tools | [🧪](MacOS_arm64/Napari-BrainGlobe-v3/) | [🧪](Windows_x64/Napari-BrainGlobe-v3/) |
 | **Imaris Loader** | Lazy, multiscale loading of `.ims` files | [🧪](MacOS_arm64/Napari-Imaris-Loader/)  | — |
 | **PHILOW** | Python-based platform for Human-in-the-LOop (HITL) Workflow (PHILOW) | [🧪](MacOS_arm64/Napari-PHILOW/) | [🧪](Windows_x64/Napari-PHILOW/) |
+| **EM Assistant** | Task-based EM image processing assistant for napari | [🧪](MacOS_arm64/Napari-EM-Assistant/) | [🧪](Windows_x64/Napari-EM-Assistant/) |
 
 Each linked page documents that setup's requirements, installed environment,
 launcher and known limitations. Inclusion in this table means an installer is
