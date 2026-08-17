@@ -1,0 +1,10 @@
+napari EM Assistant macOS installer revision: 1
+Environment: napari-em-assistant
+Python: 3.11.13
+napari: 0.6.6
+napari-em-assistant: 0.2.3
+OpenCV headless: 4.12.0.88
+
+Revision 1 provides the CPU CLAHE and cropping tools on Apple Silicon. Optional
+CuPy/CUDA support is intentionally excluded because it must match the local
+CUDA runtime and is not applicable to Apple Silicon.
